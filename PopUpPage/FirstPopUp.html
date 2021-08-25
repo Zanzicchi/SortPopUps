@@ -49,6 +49,30 @@
             position: relative;
             top: 4px;
         }
+
+        .btn_open {
+
+            position: fixed;
+            border:5px solid;
+            border-radius: 10px;
+            top: 50vh;
+            left: 50vw;
+            height: 35px;
+            width: 65px;
+            background-color: red;
+            cursor: pointer;
+            transition: color 0.5s, background-color 0.5s, border 0.5s;
+
+
+        }
+        .btn_open:hover{
+
+            border: 2px solid;
+            background-color: white;
+            color: black;
+
+
+        }
     </style>
 </head>
 
@@ -68,7 +92,7 @@
 
         <div class="container_btn">
 
-            <button @click="apri">{{btnOpen}}</button>
+            <button class="btn_open" @click="apri"><b>{{btnOpen}}</b></button>
 
         </div>
 
@@ -85,7 +109,7 @@
 
         data: {
 
-            btnOpen: "Open",
+            btnOpen: "OPEN",
             popupClose: "X",
             txtPop: "This is first PopUp!"
 
