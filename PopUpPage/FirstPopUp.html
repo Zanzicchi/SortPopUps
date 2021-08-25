@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- JQuery -->
+    <script src="/JQuery/jquery-3.6.0.min.js"></script>
+
+    <!-- VUE -->
+    <script src="/VUE/vue.js"></script>
+
+
+    <title>FirstPopUp</title>
+
+
+    <style>
+        .container_popup {
+            border: solid;
+            width: 200px;
+            height: 150px;
+            border: 2px solid;
+            border-radius: 6px;
+            position: relative;
+            margin-left: auto;
+            margin-right: auto;
+            display: none;
+        }
+
+        .txt_popup {
+
+
+            border-radius: 6px;
+            width: fit-content;
+            position: relative;
+            margin-left: auto;
+            margin-right: auto;
+            top: 40px;
+
+        }
+
+        .btn_close {
+
+            border: none;
+            cursor: pointer;
+            background-color: transparent;
+            position: relative;
+            top: 4px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="app" class="cont">
+
+        <div id="container_popup" class="container_popup">
+
+            <button class="btn_close" @click="chiudi">{{popupClose}}</button>
+
+            <div class="container_txt">
+
+                <p class="txt_popup">{{txtPop}}</p>
+            </div>
+        </div>
+
+        <div class="container_btn">
+
+            <button @click="apri">{{btnOpen}}</button>
+
+        </div>
+
+    </div>
+
+
+</body>
+
+<script>
+
+    var app = new Vue({
+
+        el: "#app",
+
+        data: {
+
+            btnOpen: "Open",
+            popupClose: "X",
+            txtPop: "This is first PopUp!"
+
+        },
+
+        methods: {
+            apri() {
+
+                $('#container_popup').show(400).css("background-color", "#ffbb63")
+                    .find(".txt_popup")
+                    .css("background-color", "white")
+
+            },
+            chiudi() {
+
+                $('#container_popup').hide(400);
+            }
+        },
+
+    })
+
+
+</script>
+
+</html>
