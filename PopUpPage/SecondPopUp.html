@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Second PopUp</title>
+
+
+    <!-- JQuery -->
+    <script src="/JQuery/jquery-3.6.0.min.js"></script>
+
+    <!-- VUE -->
+    <script src="/VUE/vue.js"></script>
+</head>
+<style>
+    .container_popup {
+
+        border: 10px solid;
+        height: 200px;
+        width: 200px;
+        position: fixed;
+        left: 40vw;
+        display: none;
+
+
+    }
+
+    .active {
+        display: block;
+
+
+    }
+
+    .btn_pop {
+
+        position: fixed;
+        border: 5px solid;
+        border-radius: 10px;
+        top: 60vh;
+        left: 45vw;
+        height: 35px;
+        width: 95px;
+        background-color: red;
+        cursor: pointer;
+        transition: color 0.5s, background-color 0.5s, border 0.5s;
+
+
+    }
+
+    .btn_pop:hover {
+
+        border: 2px solid;
+        background-color: white;
+        color: black;
+
+
+    }
+
+    .txtPopUp {
+
+        opacity: 0;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-size: 19px;
+        text-align: center;
+
+    }
+
+    .container_answer {
+        position: relative;
+        top: 30px;
+        opacity: 0;
+
+
+    }
+
+    .answers {
+
+
+        cursor: pointer;
+    }
+
+    .response {
+
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-size: 69px;
+        left: 42vw;
+        position: absolute;
+        top: 70vh;
+        display: none;
+    }
+</style>
+
+<body>
+    <div class="container_sup_pop" id="app">
+
+        <div class="container_popup">
+
+            <h1 class="txtPopUp">{{txtPopup}}</h1>
+            <div class="container_answer">
+                <ul v-for="answers in arrayAnswer">
+                    <li @click="openText" class="answers">
+                        {{answers}}
+                    </li>
+                </ul>
+
+
+            </div>
+
+        </div>
+
+        <button @click="openPopup" class="btn_pop">{{txtBtn}}</button>
+        <h1 class="response">{{response}}</h1>
+    </div>
+
+</body>
+
+<script>
+    new Vue({
+
+        el: "#app",
+        data: {
+
+            txtBtn: "Click me!",
+            txtPopup: "Hey guy! How are you?",
+            arrayAnswer: ["Fine, thanks", "Not fine, bad", "Could be better"],
+            response: "OK BRO"
+
+        },
+        methods: {
+
+            openPopup() {
+
+
+                $('.container_popup').show(1100).find('.txtPopUp').animate({
+
+                    opacity: "1"
+
+
+                }, 2500)
+
+                $('.container_answer').animate({
+
+
+                    opacity: "1"
+
+                }, 3000)
+
+
+
+            },
+
+            openText() {
+
+                $('.response').show(400);
+                setTimeout(function(){
+
+                    $('.container_popup').hide(1100);
+                    $('.response').hide(800);
+
+
+                },3000)
+            }
+
+        },
+
+
+
+    })
+
+
+
+</script>
+
+</html>
