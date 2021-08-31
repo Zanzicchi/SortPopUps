@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Third PopUp</title>
+
+    <!-- JQuery -->
+    <script src="/JQuery/jquery-3.6.0.min.js"></script>
+
+    <!-- VUE -->
+    <script src="/VUE/vue.js"></script>
+</head>
+<style>
+    .container_popup {
+        border: solid;
+        width: 270px;
+        height: 320px;
+        border-radius: 40px;
+        transition: opacity 1s;
+    
+    }
+
+    .container_popup:active {
+
+        opacity: 0;
+
+    }
+
+
+    .msg_popUp {
+
+        font-size: 25px;
+        text-align: center;
+
+    }
+
+    .button {
+
+        text-transform: uppercase;
+        position: relative;
+        top: 7vh;
+    }
+
+    .btn_close {
+
+        border: none;
+        background-color: transparent;
+        font-size: 45px;
+        position: relative;
+        left: 105px;
+        top: 145px;
+        cursor: pointer;
+
+    }
+</style>
+
+<body>
+    <div class="container_all" id="app">
+        <div v-if="seen == true" class="container_popup">
+
+            <p class="msg_popUp">{{msgPopup}}</p>
+            <button @click="chiudi" class="btn_close">{{btnX}}</button>
+
+
+
+        </div>
+        <div v-else="seen != true">
+
+            <p>Click button for show the PopUp</p>
+
+        </div>
+
+
+        <button @click="apri" class="button">{{clicca}}</button>
+    </div>
+
+</body>
+<script>
+    var app = new Vue({
+
+        el: "#app",
+        data: {
+
+            msgPopup: "Hello World!",
+            clicca: "Click me",
+            btnX: "X",
+            seen: false
+
+
+        },
+        methods: {
+            apri() {
+
+                this.seen = true;
+                
+
+
+            },
+            chiudi() {
+
+                this.seen = false;
+                
+
+            }
+        },
+
+
+
+    })
+</script>
+
+</html>
