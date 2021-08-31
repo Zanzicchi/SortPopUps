@@ -1,0 +1,40 @@
+.container_all {
+  width: 100vw;
+  position: relative;
+  right: 12px;
+  /* FIRST BUTTON  */
+}
+
+.container_all .container_first_button {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  position: relative;
+  left: 1vw;
+}
+
+.container_all .container_first_button .first_button {
+  line-height: 30px;
+  border: 3px solid #ff8f0c;
+  border-radius: 5px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  cursor: pointer;
+  margin: 0 auto;
+  color: #ff8f0c;
+  padding: 7px;
+  display: block;
+  background-image: -webkit-gradient(linear, right top, left top, from(transparent), color-stop(50%, transparent), color-stop(50%, #ff8f0c), to(#ff8f0c));
+  background-image: linear-gradient(to left, transparent, transparent 50%, #ff8f0c 50%, #ff8f0c);
+  background-position: 100% 0;
+  background-size: 200% 100%;
+  -webkit-transition: all 0.25s ease-in;
+  transition: all 0.25s ease-in;
+}
+
+.container_all .container_first_button .first_button:hover {
+  background-position: 0 0;
+  color: white;
+}
+/*# sourceMappingURL=AllButtons.css.map */

@@ -1,0 +1,36 @@
+.container_all {
+    width: 100vw;
+    position: relative;
+    right: 12px;
+
+    
+    
+    /* FIRST BUTTON  */
+    .container_first_button {
+        width: fit-content;
+        position: relative;
+        left: 1vw;
+        .first_button {
+            line-height: 30px;
+            border: 3px solid #ff8f0c;
+            border-radius: 5px;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-align: center;
+            cursor: pointer;
+            margin: 0 auto;
+            color: #ff8f0c;
+            padding: 7px;
+            display: block;
+            background-image: linear-gradient(to left, transparent, transparent 50%, #ff8f0c 50%, #ff8f0c);
+            background-position: 100% 0;
+            background-size: 200% 100%;
+            transition: all 0.25s ease-in;
+        }
+
+        .first_button:hover {
+            background-position: 0 0;
+            color: white;
+        }
+    }
+}
