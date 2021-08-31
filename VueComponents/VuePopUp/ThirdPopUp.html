@@ -20,7 +20,8 @@
         height: 320px;
         border-radius: 40px;
         transition: opacity 1s;
-    
+        cursor: pointer;
+
     }
 
     .container_popup:active {
@@ -29,6 +30,8 @@
 
     }
 
+   
+    
 
     .msg_popUp {
 
@@ -94,15 +97,16 @@
         methods: {
             apri() {
 
+               
                 this.seen = true;
-                
+
 
 
             },
             chiudi() {
 
                 this.seen = false;
-                
+
 
             }
         },
