@@ -30,8 +30,8 @@
 
     }
 
-   
-    
+
+
 
     .msg_popUp {
 
@@ -58,23 +58,34 @@
         cursor: pointer;
 
     }
+
+    .fade-enter-active,
+    .fade-leave-active {
+        transition: opacity 1s;
+    }
+
+    .fade-enter,
+    .fade-leave-to {
+        opacity: 0;
+    }
 </style>
 
 <body>
     <div class="container_all" id="app">
-        <div v-if="seen == true" class="container_popup">
 
-            <p class="msg_popUp">{{msgPopup}}</p>
-            <button @click="chiudi" class="btn_close">{{btnX}}</button>
+        <transition name="fade">
+            <div v-if="seen == true" class="container_popup">
 
-
-
-        </div>
-        <div v-else="seen != true">
+                <p class="msg_popUp">{{msgPopup}}</p>
+                <button @click="chiudi" class="btn_close">{{btnX}}</button>
+            </div>
+        </transition>
+        <!-- <div v-else="seen != true">
 
             <p>Click button for show the PopUp</p>
 
-        </div>
+        </div> -->
+
 
 
         <button @click="apri" class="button">{{clicca}}</button>
@@ -97,7 +108,7 @@
         methods: {
             apri() {
 
-               
+
                 this.seen = true;
 
 
